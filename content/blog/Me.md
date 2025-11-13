@@ -3,7 +3,7 @@ title: 'About Me – Danial Nasr'
 description: 'Full-stack web developer from Isfahan, passionate about modern web technologies, design systems, and strategy.'
 date: '2025-11-13'
 author: 'Danial Nasr'
-tags: ['Full-Stack', 'Nuxt.js', 'TailwindCSS', 'UI/UX', 'Developer']
+tags: ['Me']
 readingTime: '5 min read'
 published: true
 featured: true

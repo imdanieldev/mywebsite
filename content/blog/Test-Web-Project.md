@@ -3,7 +3,7 @@ title: 'Essential Testing Practices for Large Web Projects'
 description: 'A practical guide to frontend, backend, performance, and security testing in modern web development.'
 date: '2025-11-13'
 author: 'Danial Nasr'
-tags: ['Web Testing', 'Frontend', 'Backend', 'QA', 'Performance']
+tags: ['Web Testing', 'Performance']
 readingTime: '8 min read'
 published: true
 featured: false

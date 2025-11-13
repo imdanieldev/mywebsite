@@ -3,7 +3,7 @@ title: 'iOS vs Android Security: Myths, Realities, and AOSP'
 description: 'A critical look at the common belief that iOS is more secure than Android, and why the open-source foundation of Android changes the conversation.'
 date: '2025-11-13'
 author: 'Danial Nasr'
-tags: ['Android', 'iOS', 'Security', 'AOSP', 'Mobile OS']
+tags: ['Security', 'AOSP', 'Mobile OS']
 readingTime: '6 min read'
 published: true
 featured: false

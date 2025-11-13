@@ -3,7 +3,7 @@ title: 'React vs Vue: Beyond Market Hype'
 description: 'A practical reflection on React, Vue, and other frameworks — focusing on real-world work and developer choice.'
 date: '2025-11-13'
 author: 'Danial Nasr'
-tags: ['React', 'Vue', 'Frontend Frameworks', 'Career', 'Programming']
+tags: ['Frontend Frameworks']
 readingTime: '6 min read'
 published: true
 featured: false
