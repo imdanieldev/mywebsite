@@ -6,7 +6,7 @@
             <Skills />
             <Experience />
             <Projects />
-            <Testimonials />
+            <BlogPosts />
             <Contact />
         </main>
         <Footer />
