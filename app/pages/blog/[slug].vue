@@ -14,8 +14,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
                         {{ post.title }}
                     </h1>
-                    <div
-                        class="flex flex-wrap items-center gap-4 text-secondary pb-6 border-b border-accent-blue/20">
+                    <div class="flex flex-wrap items-center gap-4 text-secondary pb-6 border-b border-accent-blue/20">
                         <div class="flex items-center gap-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -118,10 +117,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const slug = route.params.slug as string
-const currentUrl = computed(() => {
-    return window.location.href
-})
-
+const currentUrl = ref('');
 const { data: post, pending, error } = await useAsyncData(`blog-${slug}`, () =>
     queryCollection('blog')
         .path(`/blog/${slug}`)
@@ -135,6 +131,9 @@ const formatDate = (date: string) => {
         day: 'numeric'
     })
 }
+onMounted(() => {
+    currentUrl.value = window.location.href
+});
 useHead({
     title: () => post.value ? `${post.value.title} - Danial Nasr` : 'Blog Post - Danial Nasr',
     meta: [

@@ -11,6 +11,8 @@
 </template>
 
 <script setup lang="ts">
+import { useMenuHeight } from '~/composables/useMenuHeight'
+useMenuHeight()
 useHead({
 	title: "Danial Nasr",
 	link: [

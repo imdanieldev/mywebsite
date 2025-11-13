@@ -32,8 +32,6 @@
 </template>
 
 <script setup lang="ts">
-import { useMenuHeight } from '~/composables/useMenuHeight'
-useMenuHeight()
 const handleLinkClick = (e: Event) => {
     e.preventDefault()
     const target = e.currentTarget as HTMLAnchorElement
