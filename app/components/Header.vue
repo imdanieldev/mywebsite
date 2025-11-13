@@ -1,5 +1,5 @@
 <template>
-    <header id="home" class="flex flex-col justify-center items-center text-center min-h-[calc(100svh-var(--menu-height))]">
+    <header id="home" class="flex flex-col justify-center items-center text-center min-h-svh pt-(--menu-height)">
         <h1 data-aos="fade-up" data-aos-delay="100"
             class="text-5xl md:text-7xl font-extrabold mb-2 leading-tight text-gradient"
             style="text-shadow: 0 0 5px rgba(59, 130, 246, 0.5)">

@@ -1,14 +1,14 @@
 <template>
     <div>
         <Navigation />
-        <main class="max-w-4xl mx-auto px-4 py-20">
+        <main class="max-w-4xl mx-auto px-4 pt-(--menu-height)">
             <div v-if="pending" class="text-center text-secondary">
                 Loading project...
             </div>
             <div v-else-if="error || !project" class="text-center">
                 <p class="text-red-500 mb-4">Project not found</p>
             </div>
-            <article v-else class="prose prose-invert prose-lg max-w-none">
+            <article v-else class="prose prose-invert prose-lg max-w-none py-15">
                 <header class="mb-12">
                     <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
                         {{ project.title }}
@@ -57,39 +57,6 @@
                     </div>
                 </header>
                 <ContentRenderer :value="project" class="project-content" />
-                <footer class="mt-16 pt-8 border-t border-accent-blue/20">
-                    <div class="flex flex-wrap justify-between items-center gap-8">
-                        <NuxtLink v-if="prev" :to="prev.path"
-                            class="group p-6 bg-bg-card rounded-xl border border-accent-blue/10 hover:border-accent-blue transition-all no-underline">
-                            <p class="text-secondary text-sm mb-2 flex items-center gap-2 justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
-                                    viewBox="0 0 24 24"><!-- Icon from Huge Icons by Hugeicons - undefined -->
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.5"
-                                        d="M4 12h16M9 17s-5-3.682-5-5s5-5 5-5" />
-                                </svg>
-                                Previous Project
-                            </p>
-                            <h3 class="text-primary font-semibold group-hover:text-accent-blue transition-colors">
-                                {{ prev.title }}
-                            </h3>
-                        </NuxtLink>
-                        <NuxtLink v-if="next" :to="next.path"
-                            class="group p-6 bg-bg-card rounded-xl border border-accent-blue/10 hover:border-accent-blue transition-all text-right no-underline md:ml-auto">
-                            <p class="text-secondary text-sm mb-2 flex items-center gap-2 justify-center">
-                                Next Project
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.5"
-                                        d="M20 12H4m11 5s5-3.682 5-5s-5-5-5-5" />
-                                </svg>
-                            </p>
-                            <h3 class="text-primary font-semibold group-hover:text-accent-blue transition-colors">
-                                {{ next.title }}
-                            </h3>
-                        </NuxtLink>
-                    </div>
-                </footer>
             </article>
         </main>
         <Footer />
@@ -103,15 +70,6 @@ const slug = route.params.slug as string
 const { data: project, pending, error } = await useAsyncData(`project-${slug}`, () =>
     queryCollection('projects').path(`/projects/${slug}`).first()
 )
-
-const { data: surroundings } = await useAsyncData(`surround-${slug}`, () =>
-    queryCollectionItemSurroundings('projects', `/projects/${slug}`, {
-        fields: ['path', 'title']
-    })
-)
-
-const prev = computed(() => surroundings.value?.[0])
-const next = computed(() => surroundings.value?.[1])
 
 const formatDate = (date: string) => {
     return new Date(date).toLocaleDateString('en-US', {

@@ -1,5 +1,5 @@
 <template>
-    <nav class="sticky top-0 z-10 h-16 bg-dark/95 backdrop-blur-md border-b border-accent-blue/10">
+    <nav class="fixed w-full left-0 top-0 z-10 h-16 bg-dark/80 backdrop-blur-md border-b border-accent-blue/10">
         <div class="max-w-container mx-auto px-4 h-full flex justify-between items-center">
             <NuxtLink to="/"
                 class="text-2xl font-bold text-accent-cyan z-11 transition-colors hover:text-accent-blue">
@@ -22,21 +22,19 @@
                 :aria-label="isMenuOpen ? 'Close menu' : 'Open menu'" :aria-expanded="isMenuOpen">
                 <div class="w-6 h-6 flex flex-col justify-center items-end space-y-1">
                     <span :class="[
-                        'block w-6 h-0.5 bg-text-primary transition-all duration-300',
+                        'block w-6 h-0.5 bg-primary transition-all duration-300',
                         isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
                     ]"></span>
                     <span :class="[
-                        'block w-6 h-0.5 bg-text-primary transition-all duration-300',
+                        'block w-6 h-0.5 bg-primary transition-all duration-300',
                         isMenuOpen ? 'opacity-0' : ''
                     ]"></span>
                     <span :class="[
-                        'block w-6 h-0.5 bg-text-primary transition-all duration-300',
+                        'block w-6 h-0.5 bg-primary transition-all duration-300',
                         isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
                     ]"></span>
                 </div>
             </button>
-
-            <!-- Mobile Navigation -->
             <div :class="[
                 'md:hidden absolute top-16 left-0 w-full bg-dark border-t border-accent-blue/10 transition-all duration-400 overflow-hidden',
                 isMenuOpen ? 'max-h-[500px] py-4' : 'max-h-0'
@@ -55,8 +53,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-
 const route = useRoute()
 const isMenuOpen = ref(false)
 

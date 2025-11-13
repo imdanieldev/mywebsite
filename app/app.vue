@@ -1,5 +1,5 @@
 <template>
-	<div class="relative selection:bg-accent-cyan selection:text-black">
+	<div class="relative selection:bg-accent-cyan selection:text-black overflow-hidden">
 		<div
 			class="fixed top-[-200px] left-[-200px] w-[500px] h-[500px] rounded-full bg-radial-blue pointer-events-none -z-10 blur-[80px] opacity-15">
 		</div>

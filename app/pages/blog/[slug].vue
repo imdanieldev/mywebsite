@@ -1,7 +1,7 @@
 <template>
     <div>
         <Navigation />
-        <main class="max-w-4xl mx-auto px-4 py-20">
+        <main class="max-w-4xl mx-auto px-4 py-20 pt-(--menu-height)">
             <div v-if="pending" class="text-center text-secondary">
                 Loading post...
             </div>
@@ -9,7 +9,7 @@
                 <p class="text-red-500 mb-4">Post not found</p>
             </div>
 
-            <article v-else class="prose prose-invert prose-lg max-w-none">
+            <article v-else class="prose prose-invert prose-lg max-w-none py-15">
                 <header class="mb-12">
                     <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
                         {{ post.title }}

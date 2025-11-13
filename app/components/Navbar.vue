@@ -1,5 +1,5 @@
 <template>
-    <nav class="sticky top-0 z-10 h-16 bg-dark/95 backdrop-blur-md border-b border-accent-blue/10">
+    <nav class="fixed w-full left-0 top-0 z-10 h-16 bg-dark/80 backdrop-blur-md border-b border-accent-blue/10">
         <div class="max-w-container mx-auto px-4 h-full flex justify-between items-center">
             <a href="#home" @click="handleLinkClick" class="text-2xl font-bold text-accent-cyan z-11">
                 Danial Nasr
