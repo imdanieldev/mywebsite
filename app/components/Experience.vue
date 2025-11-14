@@ -41,7 +41,7 @@ const isTimelineActive = ref(false)
 const experiences = [
     {
         title: 'Senior Full-Stack Developer',
-        company: 'Niyayesh Org.',
+        company: 'Niyayesh Print.',
         period: 'March 2025 - Present',
         description: 'Building a web store application with professional development and high-precision design. Full management of the graphics team. Built with Nuxt js, Gsap, TailwindCss, and Strapi.'
     },

@@ -57,9 +57,11 @@ const activeSection = ref('home')
 const navLinks = [
     { id: 'home', label: 'Home' },
     { id: 'skills', label: 'Skills' },
+    { id: 'services', label: 'Services' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'blog', label: 'Blog' },
+    { id: 'testimonials', label: 'Testimonials' },
     { id: 'contact', label: 'Contact' }
 ]
 

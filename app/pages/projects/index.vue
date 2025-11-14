@@ -1,8 +1,8 @@
 <template>
     <div>
         <Navigation />
-        <main class="max-w-container mx-auto px-4 pt-(--menu-height)">
-            <div class="text-center mb-16 py-15">
+        <main class="max-w-container mx-auto px-4 py-20 pt-(--menu-height)">
+            <div class="text-center py-15">
                 <h1 class="text-5xl md:text-6xl font-bold text-gradient mb-4">
                     All Projects
                 </h1>
