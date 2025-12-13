@@ -18,8 +18,6 @@ Quantum Programming is a method for designing algorithms and software that run o
 
 These unique features enable quantum computers to solve highly complex problems—such as large-scale factorization, materials simulation, and advanced optimization—much faster than their classical counterparts.
 
-[attachment_0](attachment)
-
 ---
 
 ## 🆚 Quantum vs. Classical Programming: Key Differences
