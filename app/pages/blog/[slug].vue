@@ -9,7 +9,7 @@
                 <p class="text-red-500 mb-4">Post not found</p>
             </div>
 
-            <article v-else class="prose prose-invert prose-lg max-w-none py-15">
+            <article v-else class="prose prose-lg max-w-none py-15">
                 <header class="mb-12">
                     <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
                         {{ post.title }}
@@ -157,20 +157,24 @@ useHead({
 @reference 'tailwindcss';
 
 .blog-content :deep(h2) {
-    @apply text-3xl font-bold text-[#e2e8f0] mt-12 mb-6;
+    @apply text-3xl font-bold mt-12 mb-6;
+    color: var(--color-primary);
 }
 
 .blog-content :deep(h3) {
-    @apply text-2xl font-semibold text-[#e2e8f0] mt-8 mb-4;
+    @apply text-2xl font-semibold mt-8 mb-4;
+    color: var(--color-primary);
 }
 
 .blog-content :deep(p) {
-    @apply text-[#94a3b8] leading-relaxed mb-6;
+    @apply leading-relaxed mb-6;
+    color: var(--color-secondary);
 }
 
 .blog-content :deep(ul),
 .blog-content :deep(ol) {
-    @apply text-[#94a3b8] mb-6 ml-6;
+    @apply mb-6 ml-6;
+    color: var(--color-secondary);
 }
 
 .blog-content :deep(li) {
@@ -178,23 +182,65 @@ useHead({
 }
 
 .blog-content :deep(a) {
-    @apply text-[#06b6d4] hover:text-[#3b82f6] transition-colors;
+    transition: color 200ms;
+    color: var(--color-accent-cyan);
+}
+
+.blog-content :deep(a:hover) {
+    color: var(--color-accent-blue);
 }
 
 .blog-content :deep(code) {
-    @apply bg-[#161b36] px-2 py-1 rounded text-[#06b6d4] text-sm;
+    @apply px-2 py-1 rounded text-sm;
+    background-color: color-mix(in srgb, var(--color-bg-card) 85%, var(--color-accent-blue) 15%);
+    color: var(--color-accent-cyan);
 }
 
 .blog-content :deep(pre) {
-    @apply bg-[#161b36] p-4 rounded-xl overflow-x-auto mb-6 border border-[#3b82f6]/10;
+    position: relative;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    padding: 1.8rem 1.1rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-accent-blue) 26%, transparent);
+    background:
+        linear-gradient(180deg,
+            color-mix(in srgb, var(--color-accent-blue) 14%, transparent) 0%,
+            color-mix(in srgb, var(--color-accent-cyan) 8%, transparent) 26%,
+            transparent 26%
+        ),
+        var(--color-bg-card);
+    box-shadow:
+        0 14px 30px rgba(2, 6, 23, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.blog-content :deep(pre)::before {
+    content: '';
+    position: absolute;
+    top: 0.72rem;
+    left: 0.85rem;
+    width: 2.2rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 0.25rem 50%, #fb7185 0.2rem, transparent 0.21rem),
+        radial-gradient(circle at 1.1rem 50%, #fbbf24 0.2rem, transparent 0.21rem),
+        radial-gradient(circle at 1.95rem 50%, #34d399 0.2rem, transparent 0.21rem);
 }
 
 .blog-content :deep(pre code) {
     @apply bg-transparent p-0;
+    display: block;
+    margin-top: 0.45rem;
+    color: #edf4ff;
+    text-shadow: 0 0 0.01px currentColor;
 }
 
 .blog-content :deep(blockquote) {
-    @apply border-l-4 border-[#3b82f6] pl-6 italic text-[#94a3b8] my-6;
+    @apply border-l-4 pl-6 italic my-6;
+    border-color: var(--color-accent-blue);
+    color: var(--color-secondary);
 }
 
 .blog-content :deep(img) {
@@ -206,18 +252,46 @@ useHead({
 }
 
 .blog-content :deep(th) {
-    @apply bg-[#161b36] text-[#e2e8f0] font-semibold p-3 border border-[#3b82f6]/10;
+    @apply font-semibold p-3 border;
+    background-color: var(--color-bg-card);
+    color: var(--color-primary);
+    border-color: color-mix(in srgb, var(--color-accent-blue) 20%, transparent);
 }
 
 .blog-content :deep(td) {
-    @apply text-[#94a3b8] p-3 border border-[#3b82f6]/10;
+    @apply p-3 border;
+    color: var(--color-secondary);
+    border-color: color-mix(in srgb, var(--color-accent-blue) 20%, transparent);
 }
 
 .blog-content :deep(strong) {
-    @apply text-[#e2e8f0] font-semibold;
+    @apply font-semibold;
+    color: var(--color-primary);
 }
 
 .blog-content :deep(em) {
     @apply italic;
+}
+
+:global(html[data-theme='light']) .blog-content :deep(pre) {
+    box-shadow:
+        0 10px 22px rgba(15, 23, 42, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+:global(html[data-theme='light']) .blog-content :deep(pre code) {
+    color: #0f172a;
+}
+
+@media (prefers-color-scheme: light) {
+    :global(html:not([data-theme])) .blog-content :deep(pre) {
+        box-shadow:
+            0 10px 22px rgba(15, 23, 42, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    :global(html:not([data-theme])) .blog-content :deep(pre code) {
+        color: #0f172a;
+    }
 }
 </style>

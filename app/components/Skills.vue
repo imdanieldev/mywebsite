@@ -5,12 +5,27 @@
             Technical Skills
         </h2>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 max-w-5xl mx-auto text-left">
+        <p data-aos="fade-up" data-aos-delay="100" class="text-secondary max-w-2xl mx-auto mb-8">
+            My daily stack for building fast, maintainable, and production-ready web experiences.
+        </p>
+
+        <div data-aos="fade-up" data-aos-delay="180"
+            class="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs text-secondary">
+            <span class="px-3 py-1 rounded-full border border-accent-blue/20 bg-bg-card/70">Frontend</span>
+            <span class="px-3 py-1 rounded-full border border-accent-blue/20 bg-bg-card/70">Backend</span>
+            <span class="px-3 py-1 rounded-full border border-accent-blue/20 bg-bg-card/70">CMS & Data</span>
+            <span class="px-3 py-1 rounded-full border border-accent-blue/20 bg-bg-card/70">Dev Tools</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-4 max-w-6xl mx-auto text-left">
             <div v-for="(skill, index) in skills" :key="skill.name" :data-aos="'zoom-in'"
-                :data-aos-delay="(index + 1) * 100"
-                class="group bg-bg-card p-6 rounded-xl text-center border border-accent-blue/10 hover:border-accent-cyan hover:shadow-[0_10px_20px_rgba(6,182,212,0.25)] hover:text-accent-cyan">
-                <div class="h-12 mb-2 flex justify-center items-center" v-html="skill.icon"></div>
-                <p class="text-sm md:text-base">{{ skill.name }}</p>
+                :data-aos-delay="220 + index * 70" data-aos-duration="650"
+                class="group relative isolate overflow-hidden bg-bg-card p-5 rounded-2xl text-center border border-accent-blue/10 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-accent-cyan/60 hover:shadow-[0_14px_28px_rgba(6,182,212,0.2)]">
+                <div
+                    class="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-br from-accent-blue/10 via-transparent to-accent-cyan/10">
+                </div>
+                <div class="h-12 mb-3 flex justify-center items-center" v-html="skill.icon"></div>
+                <p class="text-sm md:text-base text-primary group-hover:text-accent-cyan transition-colors">{{ skill.name }}</p>
             </div>
         </div>
     </section>

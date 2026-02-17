@@ -117,15 +117,81 @@ useHead({
 }
 
 .project-content :deep(code) {
-    @apply bg-[#161b36] px-2 py-1 rounded text-[#06b6d4] text-sm;
+    @apply px-2 py-1 rounded text-sm;
+    background-color: color-mix(in srgb, var(--color-bg-card) 85%, var(--color-accent-blue) 15%);
+    color: var(--color-accent-cyan);
 }
 
 .project-content :deep(pre) {
-    @apply bg-[#161b36] p-4 rounded-xl overflow-x-auto mb-6 border border-[#3b82f6]/10;
+    position: relative;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    padding: 1.8rem 1.1rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-accent-blue) 26%, transparent);
+    background:
+        linear-gradient(180deg,
+            color-mix(in srgb, var(--color-accent-blue) 14%, transparent) 0%,
+            color-mix(in srgb, var(--color-accent-cyan) 8%, transparent) 26%,
+            transparent 26%
+        ),
+        var(--color-bg-card);
+    box-shadow:
+        0 14px 30px rgba(2, 6, 23, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.project-content :deep(pre)::before {
+    content: '';
+    position: absolute;
+    top: 0.72rem;
+    left: 0.85rem;
+    width: 2.2rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 0.25rem 50%, #fb7185 0.2rem, transparent 0.21rem),
+        radial-gradient(circle at 1.1rem 50%, #fbbf24 0.2rem, transparent 0.21rem),
+        radial-gradient(circle at 1.95rem 50%, #34d399 0.2rem, transparent 0.21rem);
 }
 
 .project-content :deep(pre code) {
     @apply bg-transparent p-0;
+    display: block;
+    margin-top: 0.45rem;
+    color: #edf4ff;
+    text-shadow: 0 0 0.01px currentColor;
+}
+
+.project-content :deep(pre::-webkit-scrollbar) {
+    height: 8px;
+}
+
+.project-content :deep(pre::-webkit-scrollbar-thumb) {
+    background: color-mix(in srgb, var(--color-accent-blue) 44%, transparent);
+    border-radius: 999px;
+}
+
+:global(html[data-theme='light']) .project-content :deep(pre) {
+    box-shadow:
+        0 10px 22px rgba(15, 23, 42, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+:global(html[data-theme='light']) .project-content :deep(pre code) {
+    color: #0f172a;
+}
+
+@media (prefers-color-scheme: light) {
+    :global(html:not([data-theme])) .project-content :deep(pre) {
+        box-shadow:
+            0 10px 22px rgba(15, 23, 42, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    :global(html:not([data-theme])) .project-content :deep(pre code) {
+        color: #0f172a;
+    }
 }
 
 .project-content :deep(blockquote) {

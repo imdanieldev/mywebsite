@@ -6,34 +6,52 @@
 		</h2>
 		<div v-if="pending" class="text-secondary">Loading projects...</div>
 		<div v-else-if="error" class="text-red-500">Error loading projects</div>
-		<div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
+		<div v-else class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
 			<NuxtLink v-for="(project, index) in projects" :key="project.path" :to="project.path"
-				:data-aos="'zoom-in-up'" :data-aos-delay="(index + 1) * 100"
-				class="group bg-bg-card p-8 rounded-xl border border-accent-blue/10 hover:border-accent-blue hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] h-full flex flex-col">
-				<h3 class="text-xl font-semibold text-primary mb-4">
+				:data-aos="'zoom-in-up'" :data-aos-delay="140 + index * 120" data-aos-duration="760"
+				class="group relative isolate overflow-hidden bg-bg-card p-7 rounded-2xl border border-accent-blue/10 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-cyan/60 hover:shadow-[0_22px_42px_rgba(59,130,246,0.16)] h-full flex flex-col">
+				<div
+					class="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-br from-accent-blue/10 via-transparent to-accent-cyan/10">
+				</div>
+
+				<div class="flex items-start justify-between gap-3 mb-4">
+					<span
+						class="inline-flex items-center justify-center w-8 h-8 text-xs font-bold rounded-full border border-accent-blue/20 text-accent-cyan bg-dark/40">
+						0{{ index + 1 }}
+					</span>
+					<span v-if="project.date"
+						class="text-xs font-semibold tracking-wide text-secondary bg-dark/40 border border-accent-blue/10 rounded-full px-2.5 py-1">
+						{{ formatDate(project.date) }}
+					</span>
+				</div>
+
+				<h3 class="text-xl font-semibold text-primary mb-3 leading-snug group-hover:text-accent-cyan transition-colors">
 					{{ project.title }}
 				</h3>
-				<p class="text-secondary mb-6 grow">
+
+				<p class="text-secondary mb-5 grow leading-relaxed">
 					{{ project.description }}
 				</p>
-				<div v-if="project.tags && project.tags.length" class="flex flex-wrap gap-2 mb-4">
+
+				<div v-if="project.tags && project.tags.length" class="flex flex-wrap gap-2 mb-5 pt-4 border-t border-accent-blue/10">
 					<span v-for="tag in project.tags" :key="tag"
-						class="text-xs px-2 py-1 bg-accent-blue/20 text-accent-cyan rounded-full">
+						class="text-xs px-2.5 py-1 bg-accent-blue/15 text-accent-cyan rounded-full border border-accent-blue/15">
 						{{ tag }}
 					</span>
 				</div>
-				<div class="flex items-center justify-between">
+
+				<div class="flex items-center justify-between mt-auto">
 					<span
-						class="flex justify-center gap-x-1 group-hover:gap-x-3 items-center text-accent-cyan font-medium transition-all group-hover:text-accent-blue">
+						class="inline-flex justify-center gap-x-1 group-hover:gap-x-2 items-center text-accent-cyan font-medium transition-all group-hover:text-accent-blue">
 						Read More
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-0.5"
 							viewBox="0 0 24 24">
 							<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
 								stroke-width="1.5" d="M20 12H4m11 5s5-3.682 5-5s-5-5-5-5" />
 						</svg>
 					</span>
-					<span v-if="project.date" class="text-sm text-secondary">
-						{{ formatDate(project.date) }}
+					<span class="text-xs text-secondary uppercase tracking-wider">
+						Project
 					</span>
 				</div>
 			</NuxtLink>
