@@ -1,7 +1,7 @@
 <template>
     <section id="services" class="py-20 scroll-mt-20 text-center">
         <h2 data-aos="fade-up"
-            class="text-4xl md:text-5xl font-bold text-primary mb-4 inline-block border-b-2 border-accent-blue/20 pb-2">
+            class="text-4xl md:text-5xl font-bold text-primary mb-12 inline-block border-b-2 border-accent-blue/20 pb-2">
             What I Do
         </h2>
 

@@ -12,6 +12,10 @@
 
 :root {
     color-scheme: dark;
+    --motion-fast: 220ms;
+    --motion-base: 320ms;
+    --motion-slow: 480ms;
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @media (prefers-color-scheme: light) {
@@ -49,7 +53,10 @@ html[data-theme="light"] {
 @layer base {
     body {
         @apply bg-dark text-primary font-sans min-h-screen overflow-x-hidden;
-        transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease;
+        transition:
+            background-color var(--motion-base) var(--motion-ease),
+            color var(--motion-base) var(--motion-ease),
+            border-color var(--motion-base) var(--motion-ease);
     }
 }
 

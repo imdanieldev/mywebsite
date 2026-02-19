@@ -1,27 +1,27 @@
 <template>
-    <section id="faq" class="py-20">
-        <div class="text-center mb-12" data-aos="fade-up">
-            <p class="text-sm uppercase tracking-[0.2em] text-accent-cyan mb-3">FAQ</p>
-            <h2 class="text-3xl md:text-4xl font-bold text-primary">Frequently Asked Questions</h2>
-            <p class="text-secondary mt-3 max-w-2xl mx-auto">
-                Quick answers to the most common project and collaboration questions.
-            </p>
-        </div>
+    <section id="faq" class="py-20 scroll-mt-20 text-center">
+        <h2 data-aos="fade-up"
+            class="text-4xl md:text-5xl font-bold text-primary mb-12 inline-block border-b-2 border-accent-blue/20 pb-2">
+                Frequently Asked Questions
+        </h2>
+        <p data-aos="fade-up" data-aos-delay="100" class="text-secondary max-w-2xl mx-auto mb-12">
+            Quick answers to the most common project and collaboration questions.
+        </p>
 
         <div class="max-w-3xl mx-auto space-y-3">
             <article v-for="(item, index) in faqItems" :key="item.question" data-aos="fade-up" :data-aos-delay="80 * (index + 1)"
                 class="rounded-2xl border border-accent-blue/15 bg-bg-card/70 overflow-hidden">
                 <button
-                    class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-accent-blue/5 transition-colors"
+                    class="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-accent-blue/5 transition-colors duration-(--motion-fast) ease-(--motion-ease)"
                     :aria-expanded="openIndex === index" @click="toggle(index)">
                     <span class="text-primary font-medium">{{ item.question }}</span>
-                    <span class="text-accent-cyan text-xl leading-none transition-transform duration-300"
+                    <span class="text-accent-cyan text-xl leading-none transition-transform duration-(--motion-base) ease-(--motion-ease)"
                         :class="openIndex === index ? 'rotate-45' : 'rotate-0'">
                         +
                     </span>
                 </button>
 
-                <div class="grid transition-all duration-300 ease-in-out"
+                <div class="grid transition-all duration-(--motion-base) ease-(--motion-ease)"
                     :class="openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
                     <div class="overflow-hidden">
                         <p class="px-5 pb-5 text-secondary leading-relaxed">
