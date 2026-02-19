@@ -8,7 +8,9 @@
 
         <div data-aos="fade-up" data-aos-delay="100"
             class="inline-flex items-center gap-2 rounded-full border border-accent-blue/20 bg-bg-card/70 px-4 py-2 text-xs font-semibold tracking-wide text-secondary">
-            <span class="h-2 w-2 rounded-full bg-accent-cyan"></span>
+            <span class="h-2 w-2 rounded-full bg-accent-cyan relative">
+                <span class="h-2 w-2 absolute top-0 left-0 rounded-full bg-accent-cyan animate-ping opacity-30"></span>
+            </span>
             Available for freelance & full-time
         </div>
 
@@ -53,7 +55,7 @@
         <div data-aos="zoom-in" data-aos-delay="580"
             class="mt-12 flex items-center justify-center gap-6 text-xs text-secondary">
             <div class="flex flex-col items-center">
-                <span class="text-lg font-semibold text-primary">5+ </span>
+                <span class="text-lg font-semibold text-primary">6+ </span>
                 Years Experience
             </div>
             <div class="h-8 w-px bg-accent-blue/30"></div>

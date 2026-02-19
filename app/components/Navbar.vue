@@ -62,6 +62,7 @@ const navLinks = [
     { id: 'projects', label: 'Projects' },
     { id: 'blog', label: 'Blog' },
     { id: 'testimonials', label: 'Testimonials' },
+    { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Contact' }
 ]
 

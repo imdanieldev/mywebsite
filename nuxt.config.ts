@@ -3,12 +3,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
-  runtimeConfig: {
-    public: {
-      siteUrl: process.env.SITE_URL || 'https://imdanieldev.vercel.app',
-      siteName: process.env.SITE_NAME || 'Danial'
-    }
-  },
   modules: ['@nuxt/content', 'nuxt-aos', '@nuxt/image'],
   css: ['./app/main.css'],
   vite: {
@@ -31,9 +25,6 @@ export default defineNuxtConfig({
       titleTemplate: '%s',
       meta: [
         { name: 'description', content: 'Personal portfolio and blog by Danial' },
-      ],
-      link: [
-        { rel: 'alternate', type: 'application/rss+xml', href: '/rss.xml', title: 'RSS' }
       ]
     }
   }

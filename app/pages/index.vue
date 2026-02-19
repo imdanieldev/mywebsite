@@ -9,6 +9,7 @@
             <Projects />
             <BlogPosts />
             <Testimonials />
+            <FAQ />
             <Contact />
         </main>
         <Footer />
