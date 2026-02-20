@@ -11,7 +11,7 @@
 				:data-aos="'zoom-in-up'" :data-aos-delay="140 + index * 120" data-aos-duration="760"
 				class="group relative isolate overflow-hidden bg-bg-card p-7 rounded-2xl border border-accent-blue/10 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-cyan/60 hover:shadow-[0_22px_42px_rgba(59,130,246,0.16)] h-full flex flex-col">
 				<div
-					class="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-br from-accent-blue/10 via-transparent to-accent-cyan/10">
+					class="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-linear-to-br from-accent-blue/10 via-transparent to-accent-cyan/10">
 				</div>
 
 				<div class="flex items-start justify-between gap-3 mb-4">
@@ -25,7 +25,8 @@
 					</span>
 				</div>
 
-				<h3 class="text-xl font-semibold text-primary mb-3 leading-snug group-hover:text-accent-cyan transition-colors">
+				<h3
+					class="text-xl font-semibold text-primary mb-3 leading-snug group-hover:text-accent-cyan transition-colors">
 					{{ project.title }}
 				</h3>
 
@@ -33,7 +34,8 @@
 					{{ project.description }}
 				</p>
 
-				<div v-if="project.tags && project.tags.length" class="flex flex-wrap gap-2 mb-5 pt-4 border-t border-accent-blue/10">
+				<div v-if="project.tags && project.tags.length"
+					class="flex flex-wrap gap-2 mb-5 pt-4 border-t border-accent-blue/10">
 					<span v-for="tag in project.tags" :key="tag"
 						class="text-xs px-2.5 py-1 bg-accent-blue/15 text-accent-cyan rounded-full border border-accent-blue/15">
 						{{ tag }}
@@ -44,10 +46,12 @@
 					<span
 						class="inline-flex justify-center gap-x-1 group-hover:gap-x-2 items-center text-accent-cyan font-medium transition-all group-hover:text-accent-blue">
 						Read More
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform group-hover:translate-x-0.5"
-							viewBox="0 0 24 24">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							class="w-5 h-5 transition-transform group-hover:translate-x-0.5"
+							viewBox="0 0 24 24"><!-- Icon from Huge Icons by Hugeicons - undefined -->
 							<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-								stroke-width="1.5" d="M20 12H4m11 5s5-3.682 5-5s-5-5-5-5" />
+								stroke-width="1.5"
+								d="M14 12H4m14.586 1.603l-.967.76c-1.565 1.234-2.348 1.851-2.984 1.57C14 15.652 14 14.688 14 12.76v-1.52c0-1.927 0-2.89.635-3.172c.636-.281 1.419.336 2.984 1.57l.967.76C19.529 11.14 20 11.511 20 12s-.471.86-1.414 1.603" />
 						</svg>
 					</span>
 					<span class="text-xs text-secondary uppercase tracking-wider">

@@ -5,7 +5,7 @@
                 &copy; {{ currentYear }} Danial Nasr. All rights reserved.
             </div>
             <button type="button" @click="toggleTheme" :aria-pressed="isDark"
-                class="inline-flex items-center gap-2 rounded-full border border-accent-blue/20 bg-bg-card px-3 py-1.5 text-xs font-semibold tracking-wide text-secondary transition-all hover:-translate-y-0.5 hover:border-accent-cyan/60 hover:text-primary">
+                class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-accent-blue/20 bg-bg-card px-3 py-1.5 text-xs font-semibold tracking-wide text-secondary transition-all hover:-translate-y-0.5 hover:border-accent-cyan/60 hover:text-primary">
                 <span class="inline-flex h-5 w-9 items-center rounded-full border border-accent-blue/20 bg-dark/60 px-0.5 transition-colors"
                     :class="isDark ? 'justify-end' : 'justify-start'">
                     <span class="h-3.5 w-3.5 rounded-full bg-accent-cyan transition-all"></span>

@@ -6,43 +6,34 @@
         </h2>
 
         <p data-aos="fade-up" data-aos-delay="100" class="text-secondary max-w-2xl mx-auto mb-10">
-            Real feedback from founders and teams I have worked with on product design, development quality, and delivery speed.
+            Real feedback from founders and teams I have worked with on product design, development quality, and
+            delivery speed.
         </p>
 
-        <div data-aos="fade-up" data-aos-delay="160"
-            class="relative max-w-4xl mx-auto"
-            @mouseenter="pauseAutoplay" @mouseleave="startAutoplay"
-            @focusin="pauseAutoplay" @focusout="startAutoplay">
+        <div data-aos="fade-up" data-aos-delay="160" class="relative max-w-4xl mx-auto" @mouseenter="pauseAutoplay"
+            @mouseleave="startAutoplay" @focusin="pauseAutoplay" @focusout="startAutoplay">
             <div class="overflow-hidden rounded-2xl pt-2 -mt-2">
-                <div class="flex transition-transform duration-[var(--motion-slow)] ease-[var(--motion-ease)]"
+                <div class="flex transition-transform duration-(--motion-slow) ease-(--motion-ease)"
                     :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
                     <article v-for="testimonial in testimonials" :key="testimonial.name"
-                        class="group relative isolate w-full shrink-0 overflow-hidden bg-bg-card p-7 rounded-2xl border border-accent-blue/15 transition-all duration-[var(--motion-base)] ease-[var(--motion-ease)] hover:-translate-y-1 hover:border-accent-cyan/60 hover:shadow-[0_18px_36px_rgba(6,182,212,0.18)] text-left">
+                        class="group relative isolate w-full shrink-0 overflow-hidden bg-bg-card p-7 rounded-2xl border border-accent-blue/15 transition-all duration-(--motion-base) ease-(--motion-ease) hover:-translate-y-1 hover:border-accent-cyan/60 hover:shadow-[0_18px_36px_rgba(6,182,212,0.18)] text-left">
                         <div
-                            class="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-[var(--motion-base)] ease-[var(--motion-ease)] group-hover:opacity-100 bg-linear-to-br from-accent-blue/10 via-transparent to-accent-cyan/10">
+                            class="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-(--motion-base) ease-(--motion-ease) group-hover:opacity-100 bg-linear-to-br from-accent-blue/10 via-transparent to-accent-cyan/10">
                         </div>
 
                         <div>
                             <div class="flex items-center justify-between mb-5">
-                                <div class="w-11 h-11 rounded-xl border border-accent-blue/20 bg-dark/50 text-accent-cyan font-bold flex items-center justify-center">
+                                <div
+                                    class="w-11 h-11 rounded-xl border border-accent-blue/20 bg-dark/50 text-accent-cyan font-bold flex items-center justify-center">
                                     {{ getInitials(testimonial.name) }}
                                 </div>
                                 <div class="flex items-center gap-1" aria-label="5 out of 5 rating">
-                                    <svg
-                                        v-for="i in 5"
-                                        :key="i"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                    <svg v-for="i in 5" :key="i" xmlns="http://www.w3.org/2000/svg"
                                         :class="i <= testimonial.rate ? 'w-4 h-4 text-amber-400' : 'w-4 h-4 text-secondary'"
-                                        viewBox="0 0 24 24"
-                                        role="img"
-                                        aria-hidden="false"
-                                    >
-                                        <path
-                                            :fill="i <= testimonial.rate ? 'currentColor' : 'none'"
-                                            :stroke="i <= testimonial.rate ? 'none' : 'currentColor'"
-                                            stroke-width="1"
-                                            d="m12 17.27l-5.18 3.05l1.39-5.89L3.64 10.5l6.03-.52L12 4.5l2.33 5.48l6.03.52l-4.57 3.93l1.39 5.89z"
-                                        />
+                                        viewBox="0 0 24 24" role="img" aria-hidden="false">
+                                        <path :fill="i <= testimonial.rate ? 'currentColor' : 'none'"
+                                            :stroke="i <= testimonial.rate ? 'none' : 'currentColor'" stroke-width="1"
+                                            d="m12 17.27l-5.18 3.05l1.39-5.89L3.64 10.5l6.03-.52L12 4.5l2.33 5.48l6.03.52l-4.57 3.93l1.39 5.89z" />
                                     </svg>
                                 </div>
                             </div>
@@ -60,7 +51,8 @@
                             <span class="text-sm text-secondary block mb-2">
                                 {{ testimonial.position }}
                             </span>
-                            <span class="inline-flex text-xs px-2.5 py-1 rounded-full border border-accent-blue/20 text-secondary bg-dark/40">
+                            <span
+                                class="inline-flex text-xs px-2.5 py-1 rounded-full border border-accent-blue/20 text-secondary bg-dark/40">
                                 Verified Client
                             </span>
                         </footer>
@@ -70,27 +62,33 @@
 
             <div class="mt-6 flex items-center justify-center gap-3">
                 <button
-                    class="h-10 w-10 rounded-full border border-accent-blue/25 text-primary transition-all duration-[var(--motion-fast)] ease-[var(--motion-ease)] hover:border-accent-cyan hover:text-accent-cyan hover:-translate-y-0.5"
+                    class="h-10 w-10 rounded-full border flex justify-center items-center border-accent-blue/25 text-primary transition-all duration-(--motion-fast) ease-(--motion-ease) hover:border-accent-cyan hover:text-accent-cyan hover:-translate-y-0.5"
                     @click="prev" aria-label="Previous testimonial">
-                    &#8592;
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+                        viewBox="0 0 24 24"><!-- Icon from Huge Icons by Hugeicons - undefined -->
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M10 12h10M5.414 13.603l.967.76c1.565 1.234 2.348 1.851 2.984 1.57c.635-.281.635-1.245.635-3.172V11.24c0-1.927 0-2.89-.635-3.172c-.636-.281-1.419.336-2.984 1.57l-.967.76C4.471 11.14 4 11.511 4 12s.471.86 1.414 1.603" />
+                    </svg>
                 </button>
                 <div class="flex items-center gap-2">
-                    <button
-                        v-for="(testimonial, index) in testimonials"
-                        :key="`${testimonial.name}-dot`"
-                        :aria-label="`Go to testimonial ${index + 1}`"
-                        :aria-current="activeIndex === index"
-                        @click="goTo(index)"
-                        :class="[
-                            'h-2.5 rounded-full transition-all duration-[var(--motion-base)] ease-[var(--motion-ease)]',
+                    <button v-for="(testimonial, index) in testimonials" :key="`${testimonial.name}-dot`"
+                        :aria-label="`Go to testimonial ${index + 1}`" :aria-current="activeIndex === index"
+                        @click="goTo(index)" :class="[
+                            'h-2.5 rounded-full transition-all duration-(--motion-base) ease-(--motion-ease)',
                             activeIndex === index ? 'w-8 bg-accent-cyan' : 'w-2.5 bg-secondary/40 hover:bg-secondary/65'
                         ]">
                     </button>
                 </div>
                 <button
-                    class="h-10 w-10 rounded-full border border-accent-blue/25 text-primary transition-all duration-[var(--motion-fast)] ease-[var(--motion-ease)] hover:border-accent-cyan hover:text-accent-cyan hover:-translate-y-0.5"
+                    class="h-10 w-10 rounded-full border flex justify-center items-center border-accent-blue/25 text-primary transition-all duration-(--motion-fast) ease-(--motion-ease) hover:border-accent-cyan hover:text-accent-cyan hover:-translate-y-0.5"
                     @click="next" aria-label="Next testimonial">
-                    &#8594;
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+                        viewBox="0 0 24 24"><!-- Icon from Huge Icons by Hugeicons - undefined -->
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M14 12H4m14.586 1.603l-.967.76c-1.565 1.234-2.348 1.851-2.984 1.57C14 15.652 14 14.688 14 12.76v-1.52c0-1.927 0-2.89.635-3.172c.636-.281 1.419.336 2.984 1.57l.967.76C19.529 11.14 20 11.511 20 12s-.471.86-1.414 1.603" />
+                    </svg>
                 </button>
             </div>
         </div>

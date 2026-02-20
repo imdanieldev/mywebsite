@@ -14,7 +14,7 @@
                 :data-aos-delay="(index + 1) * 100"
                 class="group relative isolate overflow-hidden bg-bg-card p-8 rounded-2xl border border-accent-blue/10 transition-all duration-300 hover:-translate-y-1 hover:border-accent-blue hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)]">
                 <div class="absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    :class="service.color === 'blue' ? 'bg-gradient-to-br from-accent-blue/10 via-transparent to-transparent' : 'bg-gradient-to-br from-accent-cyan/10 via-transparent to-transparent'">
+                    :class="service.color === 'blue' ? 'bg-linear-to-br from-accent-blue/10 via-transparent to-transparent' : 'bg-linear-to-br from-accent-cyan/10 via-transparent to-transparent'">
                 </div>
 
                 <div class="flex items-start justify-between gap-4 mb-6">
