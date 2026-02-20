@@ -9,53 +9,12 @@
     --color-secondary: #94a3b8;
     --max-width-container: 1200px;
 }
-
-/* Allow smooth interpolation of custom color properties when theme changes */
-@property --color-dark {
-    syntax: '<color>';
-    inherits: true;
-    initial-value: #0a0e27;
-}
-@property --color-bg-card {
-    syntax: '<color>';
-    inherits: true;
-    initial-value: #161b36;
-}
-@property --color-accent-blue {
-    syntax: '<color>';
-    inherits: true;
-    initial-value: #3b82f6;
-}
-@property --color-accent-cyan {
-    syntax: '<color>';
-    inherits: true;
-    initial-value: #06b6d4;
-}
-@property --color-primary {
-    syntax: '<color>';
-    inherits: true;
-    initial-value: #e2e8f0;
-}
-@property --color-secondary {
-    syntax: '<color>';
-    inherits: true;
-    initial-value: #94a3b8;
-}
-
 :root {
     color-scheme: dark;
     --motion-fast: 220ms;
     --motion-base: 320ms;
     --motion-slow: 480ms;
     --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
-    /* animate custom properties for smooth theme transitions */
-    transition: 
-        --color-dark var(--motion-base) var(--motion-ease),
-        --color-bg-card var(--motion-base) var(--motion-ease),
-        --color-accent-blue var(--motion-base) var(--motion-ease),
-        --color-accent-cyan var(--motion-base) var(--motion-ease),
-        --color-primary var(--motion-base) var(--motion-ease),
-        --color-secondary var(--motion-base) var(--motion-ease);
 }
 
 @media (prefers-color-scheme: light) {
@@ -99,17 +58,6 @@ html[data-theme="light"] {
                         border-color var(--motion-base) var(--motion-ease),
                         box-shadow var(--motion-base) var(--motion-ease);
     }
-}
-
-/* Short full-page fade to smooth heavy repaints when switching themes */
-html.theme-switching::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(255,255,255,0.02));
-    pointer-events: none;
-    z-index: 9999;
-    animation: themeFade var(--motion-base) ease-in-out;
 }
 
 @keyframes themeFade {
