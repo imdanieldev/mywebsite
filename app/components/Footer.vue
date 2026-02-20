@@ -44,6 +44,23 @@ const toggleTheme = () => {
     const next = isDark.value ? 'light' : 'dark'
     localStorage.setItem(storageKey, next)
     applyTheme(next)
+    flashThemeTransition()
+}
+
+// Add a short overlay class to smooth the whole-page transition
+const flashThemeTransition = () => {
+    const root = document.documentElement
+    try {
+        const raw = getComputedStyle(root).getPropertyValue('--motion-base').trim() || '320ms'
+        let ms = 320
+        if (raw.endsWith('ms')) ms = parseFloat(raw)
+        else if (raw.endsWith('s')) ms = parseFloat(raw) * 1000
+        root.classList.add('theme-switching')
+        window.setTimeout(() => root.classList.remove('theme-switching'), Math.max(180, ms))
+    } catch (e) {
+        root.classList.add('theme-switching')
+        window.setTimeout(() => root.classList.remove('theme-switching'), 320)
+    }
 }
 
 onMounted(() => {
