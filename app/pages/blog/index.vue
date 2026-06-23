@@ -3,7 +3,7 @@
         <Navigation />
         <main class="max-w-container mx-auto px-4 py-20 pt-(--menu-height)">
             <div class="text-center py-15">
-                <h1 class="text-5xl md:text-6xl font-bold text-gradient mb-4 leading-7">
+                <h1 class="text-5xl md:text-6xl font-bold text-gradient mb-4 leading-12">
                     Blog
                 </h1>
                 <p class="text-xl text-secondary max-w-2xl mx-auto">
