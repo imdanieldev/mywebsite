@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     ],
   },
   aos: {
-    duration: 800,
+    duration: 400,
     once: true,
   },
   content: {
