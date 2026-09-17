@@ -49,7 +49,7 @@
 <script setup lang="ts">
 const experiences = [
     {
-        title: 'Senior Full-Stack Developer',
+        title: 'Junior Full-Stack Developer',
         company: 'Niyayesh Print.',
         period: 'March 2025 - Feb 2026',
         description: 'Leading the architecture and development of a production-grade online print store built for growth.',
@@ -60,7 +60,7 @@ const experiences = [
         ]
     },
     {
-        title: 'Senior Front-End Developer',
+        title: 'Junior Front-End Developer',
         company: 'Arvand Academy.',
         period: 'July 2025 - Present',
         description: 'Delivered the corporate web experience with a strong focus on performance, clarity, and maintainable front-end structure.',
